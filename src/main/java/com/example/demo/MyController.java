@@ -3,18 +3,28 @@ package com.example.demo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping("/test")
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class MyController {
 
     @RequestMapping("/product")
-    public String product() {
-        return "第一個是蘋果、第二個是橘子";
+    public Store product() {
+        Store store = new Store();
+        List<String> List = new ArrayList<>();
+        List.add("蘋果");
+        List.add("橘子");
+        store.setProductList(List);
+        return store;
     }
 
     @RequestMapping("/user")
-    public String user() {
-        return "名字為Jay";
+    public Student user() {
+        Student student = new Student();
+        student.setName("Jay");
+        student.setId(123);
+        return student;
     }
 
 }
