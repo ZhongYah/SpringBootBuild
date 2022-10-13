@@ -1,9 +1,6 @@
 package com.example.demo;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MyController {
@@ -21,6 +18,12 @@ public class MyController {
         System.out.println("student id: " + student.getId());
         System.out.println("student name: " + student.getName());
         return "Hello test2";
+    }
+
+    @RequestMapping("/test3")
+    public String test3(@RequestHeader String info){
+        System.out.println("String info: " + info);
+        return "Hello test3";
     }
 }
 
